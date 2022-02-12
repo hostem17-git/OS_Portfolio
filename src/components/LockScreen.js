@@ -96,6 +96,7 @@ const LockScreenData = styled.div`
 const LockScreenInput = styled.div`
     padding: 0%;;
     display:flex;
+    flex-wrap: nowrap;
     align-items:center;
     background-color: white;
     >form>input{

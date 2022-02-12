@@ -31,8 +31,8 @@ export const { login, logout } = appSlice.actions;
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const checkloginStatus = (state) => state.loggedIn.value;
-export const getUserName = (state) => state.name.value;
+export const checkloginStatus = (state) => { return state.app.loggedIn };
+export const getUserName = (state) => { return state.app.name };
 
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.
