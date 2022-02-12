@@ -5,7 +5,7 @@ import styled from 'styled-components';
 function AppFooter() {
     return (
         <AppFooterContainer>
-            test
+
         </AppFooterContainer>
     )
 }
