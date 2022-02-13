@@ -2,17 +2,15 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { logout } from '../features/appSlice'
 import styled from 'styled-components'
-import windows11_dark from "../assets/wallpapers/windows11_dark.jpg"
+import { windows11_dark, file_explorer, gmail, slack, spotify } from "./assets.js"
 import DesktopIcon from './DesktopIcon'
 import FolderIcon from '@mui/icons-material/Folder';
-import { CollectionsBookmarkRounded } from '@mui/icons-material'
 
 
 
 function AppMain() {
     console.log("wall", windows11_dark)
 
-    const wallpaper = "https://drive.google.com/uc?export=download&id=1MNxyaA-e8DwQ5ifgOY945LLyvgvu_lye"
     const dispatch = useDispatch()
 
     return (
@@ -24,21 +22,17 @@ function AppMain() {
                 backgroundPosition: "center center",
             }}
         >
-            {/* <Draggable bounds="#desktop_screen"><Test>1</Test></Draggable>
-            <Draggable><Test>2</Test></Draggable> */}
 
             <DesktopIconListContainer>
 
-                <DesktopIcon Icon={FolderIcon} title="About me" />
-                <DesktopIcon Icon={FolderIcon} title="About me" />
-                <DesktopIcon Icon={FolderIcon} title="About me" />
+                <DesktopIcon image imageIcon={file_explorer} title="About me" />
+                <DesktopIcon image imageIcon={spotify} title="Spotify" />
+                <DesktopIcon image imageIcon={gmail} title="Gmail" />
+                <DesktopIcon image imageIcon={slack} title="Slack" />
 
-
+                {/* <DesktopIcon Icon={FolderIcon} title="About me" /> */}
 
             </DesktopIconListContainer>
-
-
-
         </AppMainContainer>
 
     )
@@ -47,13 +41,15 @@ function AppMain() {
 export default AppMain
 
 const AppMainContainer = styled.div`
-
     width:100vw;
     height:100vh;
-
 `;
 
-const DesktopIconListContainer = styled.div``;
+const DesktopIconListContainer = styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+`;
 
 
 // const Test = styled.div`

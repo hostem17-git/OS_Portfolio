@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
+import DesktopIcon from './DesktopIcon';
+import FolderIcon from '@mui/icons-material/Folder';
+import { start } from "./assets.js"
 
 
 function AppFooter() {
     return (
         <AppFooterContainer>
-
+            <DesktopIcon Icon={FolderIcon} title="About me" taskbar image imageIcon={start} />
         </AppFooterContainer>
     )
 }
