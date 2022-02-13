@@ -22,7 +22,6 @@ function AppMain() {
                 backgroundPosition: "center center",
             }}
         >
-
             <DesktopIconListContainer>
 
                 <DesktopIcon image imageIcon={file_explorer} title="About me" />
