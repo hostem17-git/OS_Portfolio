@@ -1,14 +1,25 @@
 import React from 'react'
 import styled from 'styled-components';
 import DesktopIcon from './DesktopIcon';
-import FolderIcon from '@mui/icons-material/Folder';
-import { start } from "./assets.js"
+import { file_explorer, start } from "./assets.js"
+import Clock from "react-live-clock"
 
 
 function AppFooter() {
+
     return (
         <AppFooterContainer>
-            <DesktopIcon Icon={FolderIcon} title="About me" taskbar image imageIcon={start} />
+            <FooterCenter>
+                <DesktopIcon taskbar image imageIcon={start} />
+                <DesktopIcon taskbar image imageIcon={file_explorer} />
+                <DesktopIcon taskbar image imageIcon={start} />
+
+            </FooterCenter>
+            <FooterRight>
+                <h4><Clock format={"HH:mm"} ticking={true} /></h4>
+                <h4><Clock format={"DD-MM-YYYY"} ticking={true} /> </h4>
+            </FooterRight>
+
         </AppFooterContainer>
     )
 }
@@ -22,6 +33,19 @@ const AppFooterContainer = styled.div`
     background-color:rgba(0,0,0,.8);
     width:100vw;
     height:40px;
+    display:flex;
+    padding:8px;
 
 
+`;
+
+const FooterCenter = styled.div`
+    display:flex;`;
+
+const FooterRight = styled.div`
+    color:white;
+    >h4{
+    font-weight: 400;
+        text-align: right;
+    }
 `;

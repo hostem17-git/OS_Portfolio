@@ -6,31 +6,44 @@ function DesktopIcon({ Icon, title, taskbar, image, imageIcon }) {
     console.log(title, taskbar)
     return (
         <Draggable bounds="#desktop_screen">
-            <DesktopIconContainer>
-                {image ?
-                    <>
-                        <img className={`${taskbar ? "taskbar" : "desktop"}`} alt="icon" src={imageIcon} />
-                    </>
-                    : <>
-                        <Icon sx={{
-                            fontSize: 40
-                        }} />
-                    </>}
+            <WidthSeparator  >
+                <IconContainer className={`${taskbar ? "taskbarContainer" : "desktopContainer"}`} >
+                    {image ?
+                        <>
+                            <img className={`${taskbar ? "taskbar" : "desktop"}`} alt="icon" src={imageIcon} />
+                        </>
+                        : <>
+                            <Icon sx={{
+                                fontSize: 40
+                            }} />
+                        </>}
 
-                {taskbar ? (<></>) : (<h4>{title}</h4>)}
-            </DesktopIconContainer>
+                    {taskbar ? (<></>) : (<h4>{title}</h4>)}
+                </IconContainer>
+            </WidthSeparator>
+
         </Draggable>)
 }
 
 export default DesktopIcon
 
-const DesktopIconContainer = styled.div`
+const WidthSeparator = styled.div`
+    >.taskbarContainer{
+        width:40px;
+    }
+    >.desktopContainer{
+        width:80px;
+    }
+`;
+
+
+const IconContainer = styled.div`
     color:white;
     display:flex;
     flex-direction: column;
     align-items: center;
-    width:80px;
     padding:10px;
+    /* width:80px; */
     cursor: pointer;
     border-radius: 5px;
     :hover{
