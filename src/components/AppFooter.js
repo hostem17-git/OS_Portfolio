@@ -63,8 +63,11 @@ const FooterCenter = styled.div`
     display:flex;
     position:absolute;
     left:50%;
-    transform:translateX(-60%)
-    
+    transform:translateX(-60%);
+    @media(max-width:500px){
+        left:0;
+        transform:none;}
+        
     `;
 
 const FooterRight = styled.div`
