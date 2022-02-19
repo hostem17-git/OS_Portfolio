@@ -21,7 +21,6 @@ function DesktopIcon({ Icon, title, taskbar, image, imageIcon }) {
                     {taskbar ? (<></>) : (<h4>{title}</h4>)}
                 </IconContainer>
             </WidthSeparator>
-
         </Draggable>)
 }
 

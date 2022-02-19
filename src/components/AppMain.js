@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { windows11_dark } from "./assets.js"
 import DesktopIcon from './DesktopIcon'
-
+import Draggable from 'react-draggable'
 
 
 function AppMain({ desktopApps }) {
