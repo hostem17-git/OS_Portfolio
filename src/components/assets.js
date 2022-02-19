@@ -5,5 +5,11 @@ import gmail from "../assets/icons/gmail.png"
 import slack from "../assets/icons/slack.png"
 import spotify from "../assets/icons/spotify.png"
 import start from "../assets/icons/start.png"
+import githubLogo from "../assets/icons/Octocat.png"
+import linkedIn from "../assets/icons/linkedIn2.png"
+import mail from "../assets/icons/mail.png"
 
-export { windows11_dark, file_explorer, gmail, slack, spotify, start }
+
+
+
+export { windows11_dark, file_explorer, gmail, slack, spotify, start, githubLogo, linkedIn, mail }

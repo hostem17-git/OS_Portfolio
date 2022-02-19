@@ -30,7 +30,7 @@ export const appSlice = createSlice({
 export const { login, logout } = appSlice.actions;
 
 export const checkloginStatus = (state) => { return state.app.loggedIn };
-export const getUserName = (state) => { return state.app.name };
+export const getUserName = (state) => { return state.app.name.name };
 
 
 export default appSlice.reducer;

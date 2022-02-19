@@ -10,6 +10,7 @@ import { checkloginStatus } from './features/appSlice';
 import StartMenu from './components/StartMenu';
 
 
+
 function App() {
   const loggedIn = useSelector(checkloginStatus)
   const desktopApps = {
@@ -24,18 +25,20 @@ function App() {
 
   return (
     <AppBody>
-      {/* {!loggedIn ?
+      {!loggedIn ?
         <LockScreen /> :
         <>
           <AppBody>
-            <AppMain />
+            <AppMain desktopApps={desktopApps} />
+            <StartMenu desktopApps={desktopApps} />
             <AppFooter />
           </AppBody>
         </>
 
-      } */}
-      <AppMain desktopApps={desktopApps} />
-      <AppFooter />
+      }
+      {/* <AppMain desktopApps={desktopApps} />
+      <StartMenu desktopApps={desktopApps} />
+      <AppFooter /> */}
 
     </AppBody>
   );

@@ -6,7 +6,6 @@ import Clock from "react-live-clock"
 import SystemIcon from './SystemIcon';
 import WifiIcon from '@mui/icons-material/Wifi';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
-import StartMenu from './StartMenu';
 
 function AppFooter() {
 
