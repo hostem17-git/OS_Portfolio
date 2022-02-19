@@ -10,6 +10,7 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 function AppFooter() {
 
     return (
+        // TODO: Look for responsive positioning
         <AppFooterContainer>
             <FooterCenter>
                 <DesktopIcon taskbar image imageIcon={start} />
@@ -48,7 +49,9 @@ const AppFooterContainer = styled.div`
     width:100%;
     height:40px;
     display:flex;
-    padding:10px;
+    padding:10px 0 ;
+
+    
 `;
 
 const FooterCenter = styled.div`

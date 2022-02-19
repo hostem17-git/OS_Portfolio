@@ -43,7 +43,6 @@ const IconContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding:10px;
-    /* width:80px; */
     cursor: pointer;
     border-radius: 5px;
     :hover{
@@ -51,7 +50,7 @@ const IconContainer = styled.div`
     }
 
     >h4{
-
+        padding-top:5px;
         font-weight: 400;
     }
 
