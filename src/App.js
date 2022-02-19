@@ -5,8 +5,9 @@ import './App.css';
 import AppFooter from './components/AppFooter';
 import AppMain from './components/AppMain';
 import LockScreen from './components/LockScreen';
-import { windows11_dark, file_explorer, gmail, slack, spotify } from "./components/assets.js"
+import { file_explorer, gmail, slack, spotify } from "./components/assets.js"
 import { checkloginStatus } from './features/appSlice';
+import StartMenu from './components/StartMenu';
 
 
 function App() {
@@ -22,8 +23,7 @@ function App() {
   console.log(loggedIn, typeof (loggedIn))
 
   return (
-    <div className="App" >
-
+    <AppBody>
       {/* {!loggedIn ?
         <LockScreen /> :
         <>
@@ -34,13 +34,10 @@ function App() {
         </>
 
       } */}
+      <AppMain desktopApps={desktopApps} />
+      <AppFooter />
 
-      <AppBody>
-        <AppMain desktopApps={desktopApps} />
-        <AppFooter />
-      </AppBody>
-
-    </div>
+    </AppBody>
   );
 }
 
@@ -48,6 +45,7 @@ export default App;
 
 
 const AppBody = styled.div`
-  
+  width:100vw;
+  height: 100vh;
 `;
 

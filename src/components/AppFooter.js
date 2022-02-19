@@ -6,34 +6,40 @@ import Clock from "react-live-clock"
 import SystemIcon from './SystemIcon';
 import WifiIcon from '@mui/icons-material/Wifi';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import StartMenu from './StartMenu';
 
 function AppFooter() {
 
     return (
         // TODO: Look for responsive positioning
-        <AppFooterContainer>
-            <FooterCenter>
-                <DesktopIcon taskbar image imageIcon={start} />
-                <DesktopIcon taskbar image imageIcon={file_explorer} />
+        <Screen>
 
 
-            </FooterCenter>
-            <FooterRight>
 
-                <SystemIcons>
-                    <SystemIcon Icon={WifiIcon} />
-                    <SystemIcon Icon={VolumeUpIcon} />
-                </SystemIcons>
+            <AppFooterContainer>
+                <FooterCenter>
+                    <DesktopIcon taskbar image imageIcon={start} />
+                    <DesktopIcon taskbar image imageIcon={file_explorer} />
 
 
-                <ClockContainer>
-                    <h4><Clock format={"HH:mm"} ticking={true} /></h4>
-                    <h4><Clock format={"DD-MM-YYYY"} ticking={true} /> </h4>
-                </ClockContainer>
+                </FooterCenter>
+                <FooterRight>
 
-            </FooterRight>
+                    <SystemIcons>
+                        <SystemIcon Icon={WifiIcon} />
+                        <SystemIcon Icon={VolumeUpIcon} />
+                    </SystemIcons>
 
-        </AppFooterContainer>
+
+                    <ClockContainer>
+                        <h4><Clock format={"HH:mm"} ticking={true} /></h4>
+                        <h4><Clock format={"DD-MM-YYYY"} ticking={true} /> </h4>
+                    </ClockContainer>
+
+                </FooterRight>
+
+            </AppFooterContainer>
+        </Screen>
     )
 }
 
@@ -71,7 +77,7 @@ const FooterRight = styled.div`
     right:15px;
     bottom:3px;
     >*{
-        padding:5px;
+        padding:5px 0;
     }
 `;
 
@@ -93,3 +99,5 @@ const SystemIcons = styled.div`
         background-color: rgba(255,255,255,.1);
     }
 `;
+
+const Screen = styled.div``;

@@ -1,17 +1,12 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { logout } from '../features/appSlice'
 import styled from 'styled-components'
 import { windows11_dark } from "./assets.js"
 import DesktopIcon from './DesktopIcon'
-import FolderIcon from '@mui/icons-material/Folder';
 
 
 
 function AppMain({ desktopApps }) {
     console.log("wall", windows11_dark)
-
-    const dispatch = useDispatch()
 
     return (
         <AppMainContainer id="desktop_screen"
@@ -23,19 +18,11 @@ function AppMain({ desktopApps }) {
             }}
         >
             <DesktopIconListContainer>
-
                 {
                     Object.keys(desktopApps).map((index) => {
                         return <DesktopIcon image imageIcon={desktopApps[index]} title={index} />
                     })
                 }
-                {/* <DesktopIcon image imageIcon={file_explorer} title="About me" />
-                <DesktopIcon image imageIcon={spotify} title="Spotify" />
-                <DesktopIcon image imageIcon={gmail} title="Gmail" />
-                <DesktopIcon image imageIcon={slack} title="Slack" /> */}
-
-                {/* <DesktopIcon Icon={FolderIcon} title="About me" /> */}
-
             </DesktopIconListContainer>
         </AppMainContainer >
 
@@ -45,8 +32,8 @@ function AppMain({ desktopApps }) {
 export default AppMain
 
 const AppMainContainer = styled.div`
-    width:100vw;
-    height:100vh;
+    width:100%;
+    height:100%;
 `;
 
 const DesktopIconListContainer = styled.div`
@@ -54,14 +41,5 @@ const DesktopIconListContainer = styled.div`
     flex-direction:column;
     align-items:flex-start;
     width:fit-content;
-    border:1px solid pink;
+    /* border:1px solid pink; */
 `;
-
-
-// const Test = styled.div`
-//     display:inline-block;
-//     width:400px;
-//     height:400px;
-//     background-color:green;
-// `;
-
