@@ -15,8 +15,8 @@ function StartMenu({ desktopApps, onClickHandler }) {
 
     return (
 
-        <StartMenuContainer >
-            <StartMenuBox>
+        <StartMenuContainer onClick={() => { onClickHandler(false) }} >
+            <StartMenuBox onClick={(e) => { e.stopPropagation() }}>
 
                 <HelloBox>
                     <Avatar sx={{ width: 48, height: 48 }} />

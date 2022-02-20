@@ -20,7 +20,6 @@ function App() {
     "Spotify": spotify
   };
   const [startMenuVisibility, setStartMenuVisibility] = useState(false);
-  console.log(startMenuVisibility)
   return (
     <AppBody>
       {!loggedIn ?
@@ -28,7 +27,7 @@ function App() {
         <>
           <AppBody>
             <AppMain desktopApps={desktopApps} />
-            {startMenuVisibility && <StartMenu desktopApps={desktopApps} />}
+            {startMenuVisibility && <StartMenu desktopApps={desktopApps} onClickHandler={setStartMenuVisibility} />}
             <AppFooter setStartMenuVisibility={setStartMenuVisibility} />
           </AppBody>
         </>

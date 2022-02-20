@@ -4,7 +4,7 @@ import styled from 'styled-components'
 function StartMenuIcon({ Icon, title, taskbar, image, imageIcon, onClickhandler }) {
     console.log(title, taskbar)
     return (
-        <WidthSeparator onClick={() => { onClickhandler(true) }} >
+        <WidthSeparator onClick={() => { onClickhandler && onClickhandler(true) }} >
             <IconContainer className={`${taskbar ? "taskbarContainer" : "desktopContainer"}`} >
                 {image ?
                     <>
