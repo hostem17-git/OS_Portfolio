@@ -9,17 +9,13 @@ import { Avatar } from '@mui/material';
 import { githubLogo, linkedIn, mail } from "./assets"
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
 
-function StartMenu({ desktopApps }) {
+function StartMenu({ desktopApps, onClickHandler }) {
     const name = useSelector(getUserName);
     const dispatch = useDispatch()
 
-    const handleOutOfBoxClick = (e) => {
-
-    }
-
     return (
 
-        <StartMenuContainer onClick={handleOutOfBoxClick}>
+        <StartMenuContainer >
             <StartMenuBox>
 
                 <HelloBox>
@@ -39,11 +35,13 @@ function StartMenu({ desktopApps }) {
                 </StartMenuSearch>
 
                 <StartMenuApps>
-                    {
-                        Object.keys(desktopApps).map((index) => {
-                            return <StartMenuIcon image imageIcon={desktopApps[index]} title={index} />
-                        })
-                    }
+                    <StartMenuAppsContainer>
+                        {
+                            Object.keys(desktopApps).map((index) => {
+                                return <StartMenuIcon image imageIcon={desktopApps[index]} title={index} />
+                            })
+                        }
+                    </StartMenuAppsContainer>
 
                 </StartMenuApps>
                 <StartMenuUserInfo>
@@ -71,7 +69,7 @@ const StartMenuContainer = styled.div`
     height:100%;
     justify-content:center;
     align-items:center;
-
+   
 `;
 
 const StartMenuBox = styled.div`
@@ -106,20 +104,27 @@ const StartMenuSearch = styled.div`
 `;
 
 const StartMenuApps = styled.div`
+    display:flex;
+    align-items:flex-start;
+    min-height:45%;
+
+`
+
+const StartMenuAppsContainer = styled.div`
     /* border:1px solid pink; */
     display:flex;
     flex-wrap:wrap;
     margin:8px auto;
-    align-items: flex-start;
-    min-height:40%;
+    align-items: center;
+    
 `;
 
 const StartMenuUserInfo = styled.div`
     display:flex;
     align-items:center;
     justify-content:space-between;
-    
     /* background-color: rgba(0,0,0,0.9); */
+    margin-top:15px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     *{

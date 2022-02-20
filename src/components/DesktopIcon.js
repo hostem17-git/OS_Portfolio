@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Draggable from 'react-draggable'
 
-function DesktopIcon({ Icon, title, taskbar, image, imageIcon }) {
+function DesktopIcon({ Icon, title, taskbar, image, imageIcon, onClickhandler }) {
     console.log(title, taskbar)
     return (
         <Draggable bounds="#desktop_screen">

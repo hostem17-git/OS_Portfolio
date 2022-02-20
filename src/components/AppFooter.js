@@ -1,24 +1,22 @@
 import React from 'react'
 import styled from 'styled-components';
-import DesktopIcon from './DesktopIcon';
 import { file_explorer, start } from "./assets.js"
 import Clock from "react-live-clock"
 import SystemIcon from './SystemIcon';
 import WifiIcon from '@mui/icons-material/Wifi';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import StartMenuIcon from './StartMenuIcon';
 
-function AppFooter() {
+function AppFooter({ setStartMenuVisibility }) {
 
     return (
         // TODO: Look for responsive positioning
         <Screen>
 
-
-
             <AppFooterContainer>
-                <FooterCenter>
-                    <DesktopIcon taskbar image imageIcon={start} />
-                    <DesktopIcon taskbar image imageIcon={file_explorer} />
+                <FooterCenter >
+                    <StartMenuIcon onClickhandler={setStartMenuVisibility} taskbar image imageIcon={start} />
+                    <StartMenuIcon taskbar image imageIcon={file_explorer} />
 
 
                 </FooterCenter>

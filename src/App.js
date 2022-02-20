@@ -19,10 +19,8 @@ function App() {
     "Slack": slack,
     "Spotify": spotify
   };
-
-
-  console.log(loggedIn, typeof (loggedIn))
-
+  const [startMenuVisibility, setStartMenuVisibility] = useState(false);
+  console.log(startMenuVisibility)
   return (
     <AppBody>
       {!loggedIn ?
@@ -30,8 +28,8 @@ function App() {
         <>
           <AppBody>
             <AppMain desktopApps={desktopApps} />
-            <StartMenu desktopApps={desktopApps} />
-            <AppFooter />
+            {startMenuVisibility && <StartMenu desktopApps={desktopApps} />}
+            <AppFooter setStartMenuVisibility={setStartMenuVisibility} />
           </AppBody>
         </>
 
