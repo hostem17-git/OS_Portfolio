@@ -8,6 +8,8 @@ import { getUserName, logout } from '../features/appSlice';
 import { Avatar } from '@mui/material';
 import { githubLogo, linkedIn, mail } from "./assets"
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
+import { avatar } from "./assets"
+
 
 function StartMenu({ desktopApps, onClickHandler }) {
     const name = useSelector(getUserName);
@@ -19,7 +21,7 @@ function StartMenu({ desktopApps, onClickHandler }) {
             <StartMenuBox onClick={(e) => { e.stopPropagation() }}>
 
                 <HelloBox>
-                    <Avatar sx={{ width: 48, height: 48 }} />
+                    <Avatar src={avatar} alt='<a href="https://www.freepik.com/vectors/people">People vector created by freepik - www.freepik.com</a>' sx={{ padding: "5px", width: 48, height: 48 }} />
                     <h4>Hello {`${name}`} ! Let's Connect</h4>
                     <ConnectIconContainer>
                         <a href="https://github.com/hostem17-git" target="_blank" rel="noreferrer"> <img src={githubLogo} alt="Github Logo" /> </a>
@@ -46,7 +48,7 @@ function StartMenu({ desktopApps, onClickHandler }) {
                 </StartMenuApps>
                 <StartMenuUserInfo>
                     <UserInfo>
-                        <Avatar sx={{ width: 30, height: 30 }} />
+                        <Avatar sx={{ width: 30, height: 30 }}>{name ? `${name[0]}`.toUpperCase() : "U"}</Avatar>
                         <h2>{`${name}`}</h2>
                     </UserInfo>
                     <PowerSettingsNewOutlinedIcon onClick={() => { dispatch(logout()); }} />
@@ -164,6 +166,9 @@ const HelloBox = styled.div`
     >h4{
         color:white;
         font-weight: 300;
+    }
+    >.MuiAvatar-root{
+        background-color:rgba(255,255,255,.1)
     }
 `;
 

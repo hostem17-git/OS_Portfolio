@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 function StartMenuIcon({ Icon, title, taskbar, image, imageIcon, onClickhandler }) {
-    console.log(title, taskbar)
     return (
         <WidthSeparator onClick={() => { onClickhandler && onClickhandler(true) }} >
             <IconContainer className={`${taskbar ? "taskbarContainer" : "desktopContainer"}`} >
