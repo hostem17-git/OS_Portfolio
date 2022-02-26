@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { windows11_dark } from "./assets.js"
 import DesktopIcon from './DesktopIcon'
-
+import Folder from './Folder.js'
 
 
 function AppMain({ desktopApps }) {
@@ -16,6 +16,8 @@ function AppMain({ desktopApps }) {
                 backgroundPosition: "center center",
             }}
         >
+
+            <Folder desktopApps={desktopApps} />
             <DesktopIconListContainer>
                 {
                     Object.keys(desktopApps).map((index) => {
@@ -23,6 +25,7 @@ function AppMain({ desktopApps }) {
                     })
                 }
             </DesktopIconListContainer>
+
         </AppMainContainer >
 
     )
@@ -33,6 +36,7 @@ export default AppMain
 const AppMainContainer = styled.div`
     width:100%;
     height:100%;
+    position:relative;
 `;
 
 const DesktopIconListContainer = styled.div`

@@ -20,16 +20,17 @@ function App() {
     "Spotify": spotify
   };
   const [startMenuVisibility, setStartMenuVisibility] = useState(false);
+
+
+
   return (
     <AppBody>
       {!loggedIn ?
         <LockScreen /> :
         <>
-          <AppBody>
-            <AppMain desktopApps={desktopApps} />
-            {startMenuVisibility && <StartMenu desktopApps={desktopApps} onClickHandler={setStartMenuVisibility} />}
-            <AppFooter setStartMenuVisibility={setStartMenuVisibility} />
-          </AppBody>
+          <AppMain desktopApps={desktopApps} />
+          {startMenuVisibility && <StartMenu desktopApps={desktopApps} onClickHandler={setStartMenuVisibility} />}
+          <AppFooter setStartMenuVisibility={setStartMenuVisibility} />
         </>
 
       }

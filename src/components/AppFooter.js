@@ -12,7 +12,7 @@ function AppFooter({ setStartMenuVisibility }) {
     return (
         // TODO: Look for responsive positioning
         <Screen>
-
+            {/* <FooterBlur></FooterBlur> */}
             <AppFooterContainer>
                 <FooterCenter >
                     <StartMenuIcon onClickhandler={setStartMenuVisibility} taskbar image imageIcon={start} />
@@ -43,17 +43,35 @@ function AppFooter({ setStartMenuVisibility }) {
 export default AppFooter
 
 
+// const FooterBlur = styled.div`
+//     position:fixed;;
+//     bottom:0;
+//     left:0;
+//     right:0;
+//     bottom: -5px;
+//     width:100%;
+//     height:40px;
+//     display:flex;    
+//     /* background-color:rgba(0,0,0,.14); */
+//     padding:10px 0 ;
+//     padding-bottom: 20px;
+//     filter: blur(4px);
+// `
+
 const AppFooterContainer = styled.div`
-    position:absolute;
+    position:fixed;;
     bottom:0;
     left:0;
     right:0;
+    bottom:0px;
     background-color:rgba(0,0,0,.8);
     width:100%;
-    height:40px;
+    height:var(--footer-height);
     display:flex;
     padding:10px 0 ;
-
+    /* padding-bottom: 20px; */
+    box-sizing: border-box;
+    /* filter:blur(4px); */
     
 `;
 
@@ -62,6 +80,7 @@ const FooterCenter = styled.div`
     position:absolute;
     left:50%;
     transform:translateX(-60%);
+    filter: blur();
     @media(max-width:500px){
         left:0;
         transform:none;}
