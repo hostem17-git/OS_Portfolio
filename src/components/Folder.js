@@ -4,7 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import FolderContent from './FolderContent';
 import FolderSidebar from './FolderSidebar';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function Folder({ desktopApps }) {
     return (

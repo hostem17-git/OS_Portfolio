@@ -5,45 +5,8 @@ import styled from 'styled-components'
 function FolderContent() {
     return (
         <ContentContainer>
-            <ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew /><ArrowBackIosNew />
-            <h1>adas</h1>
-            <ArrowBackIosNew />
+
+
         </ContentContainer>
     )
 }
@@ -56,11 +19,14 @@ const ContentContainer = styled.div`
     display:flex;
     flex-direction: column;;
     width:100%;
-    min-height: 100%;
+    /* min-height: 100%; */
     color:white;
     height: calc(100vh - 130px );
-    overflow-y: scroll;
-    border:1px solid rgba(255,255,255,.1)
+    overflow-y: auto;
+    border:1px solid rgba(255,255,255,.1);
    
-
+    ::-webkit-scrollbar{
+        width:100px;
+        height:100%;
+    }
 `
