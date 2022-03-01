@@ -1,11 +1,28 @@
-import { ArrowBackIosNew } from '@mui/icons-material'
 import React from 'react'
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { getFolder } from '../features/folderSlice'
+import AboutMe from './AboutMe/AboutMe'
+import Experience from "./AboutMe/Experience"
+import Skills from "./AboutMe/Skills"
+import Projects from "./AboutMe/Projects"
+import Education from "./AboutMe/Education"
+import Profiles from "./AboutMe/Profiles"
+import Achievements from "./AboutMe/Achievements"
 
 function FolderContent() {
+
+    const folder = useSelector(getFolder)
+
     return (
         <ContentContainer>
-
+            {folder.toLowerCase() === "about me" && <AboutMe />}
+            {folder.toLowerCase() === "experience" && <Experience />}
+            {folder.toLowerCase() === "skills" && <Skills />}
+            {folder.toLowerCase() === "projects" && <Projects />}
+            {folder.toLowerCase() === "education" && <Education />}
+            {folder.toLowerCase() === "profiles" && <Profiles />}
+            {folder.toLowerCase() === "achievements" && <Achievements />}
 
         </ContentContainer>
     )

@@ -4,9 +4,14 @@ import React from 'react'
 import styled from 'styled-components'
 import FolderContent from './FolderContent';
 import FolderSidebar from './FolderSidebar';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getFolder } from '../features/folderSlice';
 
 function Folder({ desktopApps }) {
+
+    const folder = useSelector(getFolder);
+
+
     return (
         <FolderContainer>
             {/* Folder header */}
@@ -28,7 +33,7 @@ function Folder({ desktopApps }) {
                 </NavigationControl>
 
                 <CurrentPath>
-                    <h2> Test Test Test</h2>
+                    <h2> This PC {`> ${folder}`} </h2>
                 </CurrentPath>
             </FolderNavigation>
             <FolderMain>

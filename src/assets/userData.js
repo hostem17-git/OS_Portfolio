@@ -1,8 +1,8 @@
-import Resume from "./Resune.pdf"
+import Resume from "./Resume.pdf"
 import pic from "./images/pic.jpg"
 import IBM from "./images/ibm.png"
-import Kyndryl from "./images/Kyndryl.png";
-import hackerRank from "./images/HackeRank.png"
+import Kyndryl from "./images/kyndryl.png";
+import hackerRank from "./images/HackerRank.png"
 import Codechef from "./images/codechef.png"
 import linkedIn from "./images/linkedIn.png"
 import git from "./images/git.png"
@@ -49,10 +49,10 @@ const user = {
 
     // **********************************************
     aboutMe: {
-        intro: " I'm a Full Stack Software Development Engineer from India.",
+        intro: ", a Full Stack Software Development Engineer from India.",
         description:
-            "I enjoy taking up complex problems and converting to an usable format. My major domains are Web Development (React / Angular) and Software Development (Java / Python).",
-        outro: "When I'm not developing any stuff , you will find me re-watching an episode of The Office or exploring a new place.",
+            "I enjoy taking up complex problems and use my expertise to make them simple. My major domains are Web Development (React) and Software Development (Python).",
+        outro: "When I'm not developing any stuff , you will mostly find me cooking 😋",
     },
     // **********************************************
 

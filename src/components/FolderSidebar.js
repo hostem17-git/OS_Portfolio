@@ -19,14 +19,14 @@ function FolderSidebar() {
     return (
 
         <SidebarContainer>
-            <SidebarItem data-name="about_me" onClick={sidebarClickHandler}><h1 data-name="about_me"> About Me</h1></SidebarItem>
-            <SidebarItem data-name="experience" onClick={sidebarClickHandler}><h1 data-name="experience" >Experience</h1></SidebarItem>
-            <SidebarItem data-name="skills" onClick={sidebarClickHandler}><h1 data-name="skills">Skills</h1></SidebarItem>
-            <SidebarItem data-name="projects" onClick={sidebarClickHandler}><h1 data-name="projects">Projects</h1></SidebarItem>
-            <SidebarItem data-name="education" onClick={sidebarClickHandler}><h1 data-name="education">Education</h1></SidebarItem>
-            <SidebarItem data-name="certificates" onClick={sidebarClickHandler}><h1 data-name="certificates">Certificates</h1></SidebarItem>
-            <SidebarItem data-name="profiles" onClick={sidebarClickHandler}><h1 data-name="profiles">Profiles</h1></SidebarItem>
-            <SidebarItem data-name="achievemnets" onClick={sidebarClickHandler}><h1 data-name="achievemnets">Achievements</h1></SidebarItem>
+            <SidebarItem data-name="About Me" onClick={sidebarClickHandler}><h1 data-name="About Me"> About Me</h1></SidebarItem>
+            <SidebarItem data-name="Experience" onClick={sidebarClickHandler}><h1 data-name="Experience" >Experience</h1></SidebarItem>
+            <SidebarItem data-name="Skills" onClick={sidebarClickHandler}><h1 data-name="Skills">Skills</h1></SidebarItem>
+            <SidebarItem data-name="Projects" onClick={sidebarClickHandler}><h1 data-name="Projects">Projects</h1></SidebarItem>
+            <SidebarItem data-name="Education" onClick={sidebarClickHandler}><h1 data-name="Education">Education</h1></SidebarItem>
+            {/* <SidebarItem data-name="Certificates" onClick={sidebarClickHandler}><h1 data-name="Certificates">Certificates</h1></SidebarItem> */}
+            <SidebarItem data-name="Profiles" onClick={sidebarClickHandler}><h1 data-name="Profiles">Profiles</h1></SidebarItem>
+            <SidebarItem data-name="Achievements" onClick={sidebarClickHandler}><h1 data-name="Achievements">Achievements</h1></SidebarItem>
         </SidebarContainer>
     )
 }
