@@ -58,22 +58,6 @@ const user = {
 
     experiences: [
         {
-            organization: "IBM India Pvt. Ltd",
-            organizationPicture: IBM,
-            isCurrent: false,
-            startDate: "Sep 2020",
-            endDate: "Nov 2021",
-            positions: [
-                {
-                    // Associate Developer
-                    positionName: "Associate Developer",
-                    startDate: "Sep 2020",
-                    endDate: "Nov 2021",
-                    description: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                }
-            ]
-        },
-        {
             organization: "Kyndryl",
             organizationPicture: Kyndryl,
             isCurrent: true,
@@ -84,6 +68,24 @@ const user = {
                     // Associate Developer
                     positionName: "Associate Developer",
                     startDate: "Sep 2020",
+                    isCurrent: true,
+                    endDate: "Nov 2021",
+                    description: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                }
+            ]
+        },
+        {
+            organization: "IBM India Pvt. Ltd",
+            organizationPicture: IBM,
+            isCurrent: false,
+            startDate: "Sep 2020",
+            endDate: "Nov 2021",
+            positions: [
+                {
+                    // Associate Developer
+                    positionName: "Associate Developer",
+                    startDate: "Sep 2020",
+                    isCurrent: false,
                     endDate: "Nov 2021",
                     description: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 }
