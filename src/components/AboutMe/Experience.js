@@ -54,7 +54,7 @@ const ExperienceContainer = styled.div`
 
 const OrganizationContainer = styled.div`
     width:inline-block;
-    width:60%;
+    /* width:60%; */
     margin-bottom: 10px;
     padding-bottom: 5px;
 
@@ -63,6 +63,7 @@ const OrganizationContainer = styled.div`
 const Organization = styled.div`
     display:flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
     >img{
         object-fit: contain;
@@ -82,7 +83,11 @@ const OrgInfo = styled.div`
 `;
 
 const PosDetails = styled.div`
-    padding-left: 80px;;
+    padding-left: 80px;
+    @media (max-width: 450px) {
+     padding-left   : 10px ;
+    }
+    ;
     >h1{
         font-weight: 400;
         font-size:20px;
