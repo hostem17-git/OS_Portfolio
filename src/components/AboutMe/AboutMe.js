@@ -7,7 +7,7 @@ import user from '../../assets/userData';
 function AboutMe() {
     console.log(user.pic)
     return (
-        <AboutMeContainer>
+        <AboutMeContainer className='AboutME'>
             <Avatar sx={{ width: 120, height: 120 }} src={user.userImage} />
             <h1>{`< Hello World! />`}</h1>
             <Description>

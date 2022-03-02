@@ -15,7 +15,7 @@ function FolderContent() {
     const folder = useSelector(getFolder)
 
     return (
-        <ContentContainer>
+        <ContentContainer className='Content'>
             {folder.toLowerCase() === "about me" && <AboutMe />}
             {folder.toLowerCase() === "experience" && <Experience />}
             {folder.toLowerCase() === "skills" && <Skills />}
@@ -42,8 +42,8 @@ const ContentContainer = styled.div`
     overflow-y: auto;
     border:1px solid rgba(255,255,255,.1);
    
-    ::-webkit-scrollbar{
+    /* ::-webkit-scrollbar{
         width:100px;
         height:100%;
-    }
+    } */
 `
