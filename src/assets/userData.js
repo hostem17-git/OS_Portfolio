@@ -34,6 +34,7 @@ const user = {
             value: "https://www.codechef.com/users/hostem17",
             isCoding: true,
             stars: 3,
+            maxStars: 5,
             picture: Codechef,
         },
         {
@@ -41,6 +42,7 @@ const user = {
             value: "https://www.hackerrank.com/vinayakpbh1",
             isCoding: true,
             stars: 5,
+            maxStars: 6,
             picture: hackerRank,
         }
     ],

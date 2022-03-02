@@ -1,4 +1,4 @@
-import { ArrowBack, ArrowDownward, ArrowForward, ArrowUpward, KeyboardArrowDown } from '@mui/icons-material';
+import { ArrowBack, ArrowForward, ArrowUpward, KeyboardArrowDown } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import React from 'react'
 import styled from 'styled-components'
