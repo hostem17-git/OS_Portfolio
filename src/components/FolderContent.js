@@ -37,7 +37,7 @@ const ContentContainer = styled.div`
     flex-direction: column;;
     width:100%;
     /* min-height: 100%; */
-    color:white;
+    color:#e1dfdd;
     height: calc(100vh - 130px );
     overflow-y: auto;
     border:1px solid rgba(255,255,255,.1);

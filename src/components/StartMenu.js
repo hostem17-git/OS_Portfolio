@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import SearchIcon from '@mui/icons-material/Search';
-
+import { useSpring, animated } from "react-spring"
 import StartMenuIcon from './StartMenuIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserName, logout } from '../features/appSlice';
@@ -14,9 +14,10 @@ import { avatar } from "./assets"
 function StartMenu({ desktopApps, onClickHandler }) {
     const name = useSelector(getUserName);
     const dispatch = useDispatch()
+    const props = useSpring({ from: { y: 100, opacity: 0, zIndex: 999 }, to: { y: 0, opacity: 1, zIndex: 999 } })
 
     return (
-
+        // <animated.div style={props}>
         <StartMenuContainer onClick={() => { onClickHandler(false) }} >
             <StartMenuBox onClick={(e) => { e.stopPropagation() }}>
 
@@ -56,6 +57,7 @@ function StartMenu({ desktopApps, onClickHandler }) {
 
             </StartMenuBox>
         </StartMenuContainer>
+        // </animated.div>
     )
 }
 

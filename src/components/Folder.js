@@ -92,7 +92,7 @@ const CurrentPath = styled.div`
     box-sizing: border-box;
 
     >h2{
-        color:white;
+        color:#e1dfdd;
         font-size:16px;
         font-weight: 300;
         padding: 5px;

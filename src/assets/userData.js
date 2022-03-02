@@ -67,9 +67,9 @@ const user = {
                 {
                     // Associate Developer
                     positionName: "Associate Developer",
-                    startDate: "Sep 2020",
+                    startDate: "Nov 2021",
                     isCurrent: true,
-                    endDate: "Nov 2021",
+                    endDate: null,
                     description: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 }
             ]
@@ -87,7 +87,7 @@ const user = {
                     startDate: "Sep 2020",
                     isCurrent: false,
                     endDate: "Nov 2021",
-                    description: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    description: "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
                 }
             ]
         }

@@ -45,7 +45,7 @@ const SidebarContainer = styled.div`
 const SidebarItem = styled.div`
     display:flex;
     align-items: center;
-    color:white;
+    color:#e1dfdd;
     padding:5px;
     padding-left  : 20px ;
     width:100%; 
