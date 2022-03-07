@@ -7,7 +7,7 @@ import Experience from "./AboutMe/Experience"
 import Skills from "./AboutMe/Skills"
 import Projects from "./AboutMe/Projects"
 import Education from "./AboutMe/Education"
-import Profiles from "./AboutMe/Profiles"
+import ContactMe from "./AboutMe/ContactMe"
 import Achievements from "./AboutMe/Achievements"
 
 function FolderContent() {
@@ -16,13 +16,13 @@ function FolderContent() {
 
     return (
         <ContentContainer className='Content'>
-            {folder.toLowerCase() === "about me" && <AboutMe />}
-            {folder.toLowerCase() === "experience" && <Experience />}
-            {folder.toLowerCase() === "skills" && <Skills />}
-            {folder.toLowerCase() === "projects" && <Projects />}
-            {folder.toLowerCase() === "education" && <Education />}
-            {folder.toLowerCase() === "profiles" && <Profiles />}
-            {folder.toLowerCase() === "achievements" && <Achievements />}
+            {folder.toLowerCase() === "about me".toLowerCase() && <AboutMe />}
+            {folder.toLowerCase() === "experience".toLowerCase() && <Experience />}
+            {folder.toLowerCase() === "skills".toLowerCase() && <Skills />}
+            {folder.toLowerCase() === "projects".toLowerCase() && <Projects />}
+            {folder.toLowerCase() === "education".toLowerCase() && <Education />}
+            {folder.toLowerCase() === "contact me".toLowerCase() && <ContactMe />}
+            {folder.toLowerCase() === "achievements".toLowerCase() && <Achievements />}
 
         </ContentContainer>
     )

@@ -3,7 +3,10 @@ import React from 'react'
 import styled from 'styled-components'
 import user from '../../assets/userData';
 
-function Profiles() {
+function ContactMe() {
+
+
+
     return (
         <ProfilesContainer>
             <h1>My Online Presence</h1>
@@ -34,7 +37,7 @@ function Profiles() {
     )
 }
 
-export default Profiles
+export default ContactMe
 
 const ProfilesContainer = styled.div`
     width:100%;

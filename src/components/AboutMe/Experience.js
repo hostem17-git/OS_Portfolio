@@ -47,7 +47,7 @@ export default Experience
 const ExperienceContainer = styled.div`     
     /* padding:auto 40px; */
     width:100%;
-    padding:40px 20px;
+    padding:20px;
     box-sizing: border-box;
     
 `;
