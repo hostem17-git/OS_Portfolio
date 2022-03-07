@@ -50,7 +50,7 @@ const ProjectContainer = styled.div`
 
 const ProjectHeader = styled.div`
     display:flex;
-    align-items:center ;
+    align-items:flex-end ;
     /* justify-content:space-between; */
     >h1{
         font-size: 24px;

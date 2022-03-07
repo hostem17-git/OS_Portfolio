@@ -96,17 +96,17 @@ const user = {
     ],
     education: [
         {
-            instituteName: "VIT-Vellore",
+            name: "VIT-Vellore",
             degree: "Bachelor's of Technology in Electronics and Communication",
             year: "2020",
             grade: "8.72"
         }, {
-            instituteName: "Aatreya Academy",
+            name: "Aatreya Academy",
             degree: "Intermediate",
             year: "2015",
             grade: "86.8%"
         }, {
-            instituteName: "VIT-Vellore",
+            name: "Aatreya Academy",
             degree: "Matriculation",
             year: "2013",
             grade: "10.0"
