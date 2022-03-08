@@ -21,7 +21,7 @@ function AppMain({ desktopApps }) {
             <DesktopIconListContainer>
                 {
                     Object.keys(desktopApps).map((index) => {
-                        return <DesktopIcon image imageIcon={desktopApps[index]} title={index} />
+                        return <DesktopIcon key={index} image imageIcon={desktopApps[index]} title={index} />
                     })
                 }
             </DesktopIconListContainer>

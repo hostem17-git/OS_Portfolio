@@ -11,7 +11,7 @@ function Projects() {
 
             {
                 userData.projects.map((project, projectIndex) => {
-                    return <Project>
+                    return <Project key={projectIndex}>
                         <ProjectHeader>
                             <h1>
                                 {project.name}

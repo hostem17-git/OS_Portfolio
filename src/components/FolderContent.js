@@ -15,7 +15,7 @@ function FolderContent() {
     const folder = useSelector(getFolder)
 
     return (
-        <ContentContainer className='Content'>
+        <ContentContainer className='Content preventDrag'>
             {folder.toLowerCase() === "about me".toLowerCase() && <AboutMe />}
             {folder.toLowerCase() === "experience".toLowerCase() && <Experience />}
             {folder.toLowerCase() === "skills".toLowerCase() && <Skills />}

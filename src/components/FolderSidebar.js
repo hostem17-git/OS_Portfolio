@@ -18,7 +18,7 @@ function FolderSidebar() {
 
     return (
 
-        <SidebarContainer>
+        <SidebarContainer className="preventDrag">
             <SidebarItem data-name="About Me" onClick={sidebarClickHandler}><h1 data-name="About Me"> About Me</h1></SidebarItem>
             <SidebarItem data-name="Experience" onClick={sidebarClickHandler}><h1 data-name="Experience" >Experience</h1></SidebarItem>
             <SidebarItem data-name="Skills" onClick={sidebarClickHandler}><h1 data-name="Skills">Skills</h1></SidebarItem>

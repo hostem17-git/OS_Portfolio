@@ -9,8 +9,9 @@ import { getFolder } from '../features/folderSlice';
 import { Icon } from '@fluentui/react/lib/Icon';
 import { NeutralColors } from '@fluentui/theme';
 import { file_explorer_small } from "./assets"
+import Draggable from 'react-draggable';
 
-function Folder({ desktopApps }) {
+function Folder() {
 
     const folder = useSelector(getFolder);
 
@@ -36,47 +37,51 @@ function Folder({ desktopApps }) {
     }
 
     return (
-        <FolderContainer ref={folderBox}>
-            {/* Folder header */}
-            <FolderHeader>
+        <Draggable cancel=".preventDrag">
+            {/* ADD THIS class to any child from where you don't want drag to initiate */}
+            <FolderContainer ref={folderBox}>
+                {/* Folder header */}
+                <FolderHeader>
+                    <FolderName>
+                        <img src={file_explorer_small} alt="folder Icon" />
+                        <h2>{folder}</h2>
+                    </FolderName>
+                    <FolderControl className='preventDrag'>
+                        <Icon className='controlButton' iconName='ChromeMinimize' title="minimize" aria-label='minimize' style={{ color: NeutralColors.gray10 }} />
+                        <Icon onClick={handleRestore} className='controlButton' iconName='ChromeRestore' title="restore" aria-label='restore' style={{ color: NeutralColors.gray10 }} />
+                        <Icon className='controlButton' iconName='ChromeClose' title="close" aria-label='close' style={{ color: NeutralColors.gray10 }} />
+                    </FolderControl>
 
-                <FolderName>
-                    <img src={file_explorer_small} alt="folder Icon" />
-                    <h2>{folder}</h2>
-                </FolderName>
-                <FolderControl>
-                    <Icon className='controlButton' iconName='ChromeMinimize' title="minimize" aria-label='minimize' style={{ color: NeutralColors.gray10 }} />
-                    <Icon onClick={handleRestore} className='controlButton' iconName='ChromeRestore' title="restore" aria-label='restore' style={{ color: NeutralColors.gray10 }} />
-                    <Icon className='controlButton' iconName='ChromeClose' title="close" aria-label='close' style={{ color: NeutralColors.gray10 }} />
-                </FolderControl>
+                </FolderHeader>
+                <FolderNavigation onDragStart={() => { return false; }}>
+                    <NavigationControl>
+                        <IconButton>
+                            <ArrowBack />
+                        </IconButton>
+                        <IconButton>
+                            <ArrowForward />
+                        </IconButton>
+                        <IconButton>
+                            <KeyboardArrowDown />
+                        </IconButton>
+                        <IconButton>
+                            <ArrowUpward />
+                        </IconButton>
+                    </NavigationControl>
 
-            </FolderHeader>
-            <FolderNavigation>
-                <NavigationControl>
-                    <IconButton>
-                        <ArrowBack />
-                    </IconButton>
-                    <IconButton>
-                        <ArrowForward />
-                    </IconButton>
-                    <IconButton>
-                        <KeyboardArrowDown />
-                    </IconButton>
-                    <IconButton>
-                        <ArrowUpward />
-                    </IconButton>
-                </NavigationControl>
+                    <CurrentPath>
+                        <h2> This PC {`> ${folder}`} </h2>
+                    </CurrentPath>
+                </FolderNavigation>
 
-                <CurrentPath>
-                    <h2> This PC {`> ${folder}`} </h2>
-                </CurrentPath>
-            </FolderNavigation>
+                <FolderMain>
+                    <FolderSidebar />
+                    <FolderContent />
+                </FolderMain>
+            </FolderContainer>
+        </Draggable >
 
-            <FolderMain>
-                <FolderSidebar desktopApps={desktopApps} />
-                <FolderContent />
-            </FolderMain>
-        </FolderContainer>
+
     )
 }
 
@@ -124,6 +129,7 @@ const FolderName = styled.div`
     display:flex;
     align-items:center;
     color:var(--folder_text_color) ;
+    margin-left:5px;
     >img{
         margin-right:5px;
     }
