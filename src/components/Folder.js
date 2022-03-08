@@ -4,14 +4,22 @@ import React, { useRef } from 'react'
 import styled from 'styled-components'
 import FolderContent from './FolderContent';
 import FolderSidebar from './FolderSidebar';
-import { useSelector } from 'react-redux';
-import { getFolder } from '../features/folderSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAboutMeVisibility, getFolder, hideAboutMe } from '../features/folderSlice';
 import { Icon } from '@fluentui/react/lib/Icon';
 import { NeutralColors } from '@fluentui/theme';
 import { file_explorer_small } from "./assets"
 import Draggable from 'react-draggable';
 
 function Folder() {
+
+    const dispatch = useDispatch();
+    const current = useSelector(getAboutMeVisibility);
+
+    const CloseClick = () => {
+        if (current)
+            dispatch(hideAboutMe())
+    }
 
     const folder = useSelector(getFolder);
 
@@ -38,7 +46,7 @@ function Folder() {
 
     return (
         <Draggable cancel=".preventDrag">
-            {/* ADD THIS class to any child from where you don't want drag to initiate */}
+            {/* ADD THIS class to any child from where you don't want drag to initiate  */}
             <FolderContainer ref={folderBox}>
                 {/* Folder header */}
                 <FolderHeader>
@@ -49,7 +57,7 @@ function Folder() {
                     <FolderControl className='preventDrag'>
                         <Icon className='controlButton' iconName='ChromeMinimize' title="minimize" aria-label='minimize' style={{ color: NeutralColors.gray10 }} />
                         <Icon onClick={handleRestore} className='controlButton' iconName='ChromeRestore' title="restore" aria-label='restore' style={{ color: NeutralColors.gray10 }} />
-                        <Icon className='controlButton' iconName='ChromeClose' title="close" aria-label='close' style={{ color: NeutralColors.gray10 }} />
+                        <Icon onClick={CloseClick} className='controlButton' iconName='ChromeClose' title="close" aria-label='close' style={{ color: NeutralColors.gray10 }} />
                     </FolderControl>
 
                 </FolderHeader>

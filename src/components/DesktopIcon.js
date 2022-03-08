@@ -5,7 +5,7 @@ import Draggable from 'react-draggable'
 function DesktopIcon({ Icon, title, taskbar, image, imageIcon, onClickhandler }) {
     return (
         <Draggable bounds="#desktop_screen">
-            <WidthSeparator  >
+            <WidthSeparator onClick={() => { onClickhandler && onClickhandler(true) }} >
                 <IconContainer className={`${taskbar ? "taskbarContainer" : "desktopContainer"}`} >
                     {image ?
                         <>
@@ -20,7 +20,8 @@ function DesktopIcon({ Icon, title, taskbar, image, imageIcon, onClickhandler })
                     {taskbar ? (<></>) : (<h4>{title}</h4>)}
                 </IconContainer>
             </WidthSeparator>
-        </Draggable>)
+        </Draggable>
+    )
 }
 
 export default DesktopIcon

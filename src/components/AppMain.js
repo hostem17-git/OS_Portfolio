@@ -1,11 +1,21 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { getAboutMeVisibility, showAboutMe } from '../features/folderSlice.js'
 import { windows11_dark } from "./assets.js"
 import DesktopIcon from './DesktopIcon'
 import Folder from './Folder.js'
-
+import { file_explorer } from './assets.js'
 
 function AppMain({ desktopApps }) {
+    const aboutMeVisibility = useSelector(getAboutMeVisibility);
+    const current = useSelector(getAboutMeVisibility);
+    const dispatch = useDispatch()
+
+    const openAboutMe = () => {
+        if (!current)
+            dispatch(showAboutMe())
+    }
 
     return (
         <AppMainContainer id="desktop_screen"
@@ -17,8 +27,9 @@ function AppMain({ desktopApps }) {
             }}
         >
 
-            <Folder desktopApps={desktopApps} />
+            {aboutMeVisibility ? <Folder /> : <></>}
             <DesktopIconListContainer>
+                <DesktopIcon onClickhandler={openAboutMe} image imageIcon={file_explorer} title="About Me" />
                 {
                     Object.keys(desktopApps).map((index) => {
                         return <DesktopIcon key={index} image imageIcon={desktopApps[index]} title={index} />

@@ -6,8 +6,17 @@ import SystemIcon from './SystemIcon';
 import WifiIcon from '@mui/icons-material/Wifi';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import StartMenuIcon from './StartMenuIcon';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAboutMeVisibility, showAboutMe } from '../features/folderSlice.js';
 
 function AppFooter({ setStartMenuVisibility }) {
+    const dispatch = useDispatch();
+    const current = useSelector(getAboutMeVisibility);
+
+    const openAboutMe = () => {
+        if (!current)
+            dispatch(showAboutMe())
+    }
 
     return (
         // TODO: Look for responsive positioning
@@ -16,7 +25,7 @@ function AppFooter({ setStartMenuVisibility }) {
             <AppFooterContainer>
                 <FooterCenter >
                     <StartMenuIcon onClickhandler={setStartMenuVisibility} taskbar image imageIcon={start} />
-                    <StartMenuIcon taskbar image imageIcon={file_explorer} />
+                    <StartMenuIcon onClickhandler={openAboutMe} taskbar image imageIcon={file_explorer} />
 
 
                 </FooterCenter>

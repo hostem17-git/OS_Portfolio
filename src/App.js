@@ -5,7 +5,7 @@ import './App.css';
 import AppFooter from './components/AppFooter';
 import AppMain from './components/AppMain';
 import LockScreen from './components/LockScreen';
-import { file_explorer, gmail, slack, spotify } from "./components/assets.js"
+import { gmail, slack, spotify } from "./components/assets.js"
 import { checkloginStatus } from './features/appSlice';
 import StartMenu from './components/StartMenu';
 import { initializeIcons } from '@fluentui/font-icons-mdl2';
@@ -16,14 +16,11 @@ function App() {
 
   const loggedIn = useSelector(checkloginStatus)
   const desktopApps = {
-    "About Me": file_explorer,
     "Gmail": gmail,
     "Slack": slack,
     "Spotify": spotify
   };
   const [startMenuVisibility, setStartMenuVisibility] = useState(false);
-
-
 
   return (
     <AppBody>
@@ -31,6 +28,7 @@ function App() {
         <LockScreen /> :
         <>
           <AppMain desktopApps={desktopApps} />
+
           {startMenuVisibility && <StartMenu desktopApps={desktopApps} onClickHandler={setStartMenuVisibility} />}
           <AppFooter setStartMenuVisibility={setStartMenuVisibility} />
         </>
