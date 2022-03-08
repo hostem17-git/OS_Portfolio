@@ -1,21 +1,56 @@
 import { ArrowBack, ArrowForward, ArrowUpward, KeyboardArrowDown } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import FolderContent from './FolderContent';
 import FolderSidebar from './FolderSidebar';
 import { useSelector } from 'react-redux';
 import { getFolder } from '../features/folderSlice';
+import { Icon } from '@fluentui/react/lib/Icon';
+import { NeutralColors } from '@fluentui/theme';
+import { file_explorer_small } from "./assets"
 
 function Folder({ desktopApps }) {
 
     const folder = useSelector(getFolder);
 
+    const folderBox = useRef();
+    const folderSize = {
+        minimized: false,
+        min: {
+            width: "60%",
+            height: "60%"
+        },
+        max: {
+            width: "100%",
+            height: "calc(100% - var(--footer-height))"
+        }
+    }
+
+    const handleRestore = (e) => {
+        const targetDimensions = folderSize.minimized ? folderSize.max : folderSize.min;
+        folderSize.minimized = !folderSize.minimized;
+        folderBox.current.style.width = targetDimensions.width;
+        folderBox.current.style.height = targetDimensions.height;
+
+    }
 
     return (
-        <FolderContainer>
+        <FolderContainer ref={folderBox}>
             {/* Folder header */}
-            <FolderHeader>test</FolderHeader>
+            <FolderHeader>
+
+                <FolderName>
+                    <img src={file_explorer_small} alt="folder Icon" />
+                    <h2>{folder}</h2>
+                </FolderName>
+                <FolderControl>
+                    <Icon className='controlButton' iconName='ChromeMinimize' title="minimize" aria-label='minimize' style={{ color: NeutralColors.gray10 }} />
+                    <Icon onClick={handleRestore} className='controlButton' iconName='ChromeRestore' title="restore" aria-label='restore' style={{ color: NeutralColors.gray10 }} />
+                    <Icon className='controlButton' iconName='ChromeClose' title="close" aria-label='close' style={{ color: NeutralColors.gray10 }} />
+                </FolderControl>
+
+            </FolderHeader>
             <FolderNavigation>
                 <NavigationControl>
                     <IconButton>
@@ -36,9 +71,9 @@ function Folder({ desktopApps }) {
                     <h2> This PC {`> ${folder}`} </h2>
                 </CurrentPath>
             </FolderNavigation>
+
             <FolderMain>
                 <FolderSidebar desktopApps={desktopApps} />
-
                 <FolderContent />
             </FolderMain>
         </FolderContainer>
@@ -55,6 +90,7 @@ const FolderContainer = styled.div`
     box-sizing: border-box;
     position:absolute;
     z-index:100;
+    overflow:hidden;
 `;
 
 const FolderHeader = styled.div`
@@ -64,8 +100,39 @@ const FolderHeader = styled.div`
     width:100%;
     background-color:#292827;
     border-bottom: 1px solid  rgba(255,255,255,.2);
+    padding:0 2px ;
     ;
 `;
+
+const FolderControl = styled.div`
+    >.controlButton{
+        padding:5px 10px;
+        cursor: pointer;
+        :hover{
+            background-color: #484644 ;
+        }
+    }
+
+    >.controlButton:last-child{
+        :hover{
+            background-color: #e81123 ;
+        }
+    }
+`;
+
+const FolderName = styled.div`
+    display:flex;
+    align-items:center;
+    color:var(--folder_text_color) ;
+    >img{
+        margin-right:5px;
+    }
+    >h2{
+        font-size:16px;
+        font-weight: 300;
+    }
+`;
+
 
 const FolderNavigation = styled.div`
     display:flex;
@@ -73,15 +140,16 @@ const FolderNavigation = styled.div`
     box-sizing: border-box;
 `;
 
+
 const NavigationControl = styled.div`
     display:flex;
     align-items:center;
-    padding:5px 10px;
+    padding:3px 10px;
     box-sizing: border-box;
 
     /* flex:.2; */
     >button>.MuiSvgIcon-root{
-        color:#e1dfdd;
+        color:var(--folder_text_color) ;
         font-size: 18px;
     }
 `;
@@ -92,7 +160,7 @@ const CurrentPath = styled.div`
     box-sizing: border-box;
 
     >h2{
-        color:#e1dfdd;
+        color:var(--folder_text_color) ;
         font-size:16px;
         font-weight: 300;
         padding: 5px;

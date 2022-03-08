@@ -9,4 +9,5 @@ body {
   overflow: hidden;
   --footer-height: 60px;
   font-family: "Roboto", sans-serif;
+  --folder_text_color: #e1dfdd;
 }

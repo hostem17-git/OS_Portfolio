@@ -37,15 +37,14 @@ const SidebarContainer = styled.div`
     flex:.1;    
     display:flex;
     flex-direction: column;
-    align-items:center;
-    
+    align-items:center;           
 `;
 
 ;
 const SidebarItem = styled.div`
     display:flex;
     align-items: center;
-    color:#e1dfdd;
+    color:var(--folder_text_color) ;
     padding:5px;
     padding-left  : 20px ;
     width:100%; 
@@ -53,8 +52,7 @@ const SidebarItem = styled.div`
     >h1{
         font-size: 18px;
         font-weight: 300;
-    height:100%;
-
+        /* height:100%; */
     }
 
     :hover{

@@ -54,7 +54,7 @@ const user = {
         intro: ", a Full Stack Software Development Engineer from India.",
         description:
             "I enjoy taking up complex problems and use my expertise to make them simple. My major domains are Web Development (React) and Software Development (Python).",
-        outro: "When I'm not developing any stuff , you will mostly find me cooking 😋",
+        outro: "When I'm not developing any stuff , you will mostly find me cooking 👨‍🍳😋",
     },
     // **********************************************
 

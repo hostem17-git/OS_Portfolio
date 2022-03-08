@@ -36,14 +36,8 @@ const ContentContainer = styled.div`
     display:flex;
     flex-direction: column;;
     width:100%;
-    /* min-height: 100%; */
-    color:#e1dfdd;
+    color:var(--folder_text_color) ;
     height: calc(100vh - 130px );
     overflow-y: auto;
     border:1px solid rgba(255,255,255,.1);
-   
-    /* ::-webkit-scrollbar{
-        width:100px;
-        height:100%;
-    } */
 `

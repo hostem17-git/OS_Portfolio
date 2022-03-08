@@ -9,8 +9,8 @@ import githubLogo from "../assets/icons/Octocat.png"
 import linkedIn from "../assets/icons/linkedIn2.png"
 import mail from "../assets/icons/mail.png"
 import avatar from "../assets/avatar.png"
+import file_explorer_small from "../assets/icons/file_explorer_small.png"
 
 
 
-
-export { windows11_dark, file_explorer, gmail, slack, spotify, start, githubLogo, linkedIn, mail, avatar }
+export { windows11_dark, file_explorer, gmail, slack, spotify, start, githubLogo, linkedIn, mail, avatar, file_explorer_small }

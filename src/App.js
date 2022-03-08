@@ -8,10 +8,12 @@ import LockScreen from './components/LockScreen';
 import { file_explorer, gmail, slack, spotify } from "./components/assets.js"
 import { checkloginStatus } from './features/appSlice';
 import StartMenu from './components/StartMenu';
-
+import { initializeIcons } from '@fluentui/font-icons-mdl2';
 
 
 function App() {
+  initializeIcons();
+
   const loggedIn = useSelector(checkloginStatus)
   const desktopApps = {
     "About Me": file_explorer,
