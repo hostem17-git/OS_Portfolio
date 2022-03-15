@@ -5,7 +5,6 @@ import './App.css';
 import AppFooter from './components/AppFooter';
 import AppMain from './components/AppMain';
 import LockScreen from './components/LockScreen';
-import { gmail, slack, spotify } from "./components/assets.js"
 import { checkloginStatus } from './features/appSlice';
 import StartMenu from './components/StartMenu';
 import { initializeIcons } from '@fluentui/font-icons-mdl2';

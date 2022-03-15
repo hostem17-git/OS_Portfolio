@@ -50,7 +50,7 @@ const IconContainer = styled.div`
 
     >h4{
         padding-top:5px;
-        font-weight: 400;
+        font-weight: 300;
         text-align: center;
     }
 
