@@ -71,7 +71,6 @@ function StartMenu({ desktopApps, onClickHandler }) {
                                 </a>
                             ))
                         }
-
                     </StartMenuAppsContainer>
                 </StartMenuApps>
 
@@ -112,6 +111,9 @@ const StartMenuBox = styled.div`
     padding:20px;
     border-radius:15px;
     max-width:40%;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
     height: 500px; //TODO:MAke Dynamic
     
 `;
@@ -142,8 +144,8 @@ const StartMenuSearch = styled.div`
 const StartMenuApps = styled.div`
     display:flex;
     align-items:flex-start;
-    min-height:45%;
-
+    max-height:35%;
+    overflow-y: auto;
 `
 
 const StartMenuAppsContainer = styled.div`
@@ -160,6 +162,7 @@ const StartMenuAppsContainer = styled.div`
 
 const StartMenuUserInfo = styled.div`
     display:flex;
+    justify-self: flex-end;
     align-items:center;
     justify-content:space-between;
     /* background-color: rgba(0,0,0,0.9); */
