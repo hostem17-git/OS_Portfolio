@@ -7,6 +7,7 @@ import Codechef from "./images/codechef.png"
 import linkedIn from "./images/linkedIn.png"
 import git from "./images/git.png"
 
+
 const user = {
     FirstName: "Vinayak",
     LastName: "Jaiswal",
@@ -137,23 +138,25 @@ const user = {
 
         {
             name: "LinkedIn-Clone",
-            techstack: ["React", "Redux", "firebase", "firestore", "Materil-UI"],
+            techstack: ["React", "Redux", "firebase", "firestore", "Material-UI"],
             description: "LinkedIn clone that allows users to login via mail and password.Once logged-in, users have option to see previous posts/ add their own posts",
             projectUrl: "https://linkedin-66877.web.app/",
         },
         {
             name: "Slack-Clone",
-            techstack: ["React", "Redux", "React-Router", "firebase", "firestore", "Google Authentication", "Materil-UI"],
+            techstack: ["React", "Redux", "React-Router", "firebase", "firestore", "Google Authentication", "Material-UI"],
             description: "Slack Clone made using React.js. Users login using Google authentication and once logged-in, users have option to create new channels, post on existing channels",
             projectUrl: "https://slack-clone-562d1.web.app/",
         },
+        {
+            name: "Gmail Clone",
+            techstack: ["React", "Redux", "firebase", "firestore", "Material-UI"],
+            description: "LinkedIn clone that allows users to login via mail and password.Once logged-in, users have option to see previous posts/ add their own posts",
+            projectUrl: "https://fir-69a7c.firebaseapp.com/",
+        }
 
     ]
 }
-
-
-
-
 
 
 export default user;

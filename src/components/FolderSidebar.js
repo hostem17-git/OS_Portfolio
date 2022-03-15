@@ -25,7 +25,9 @@ function FolderSidebar() {
             <SidebarItem data-name="Projects" onClick={sidebarClickHandler}><h1 data-name="Projects">Projects</h1></SidebarItem>
             <SidebarItem data-name="Education" onClick={sidebarClickHandler}><h1 data-name="Education">Education</h1></SidebarItem>
             {/* <SidebarItem data-name="Certificates" onClick={sidebarClickHandler}><h1 data-name="Certificates">Certificates</h1></SidebarItem> */}
+            <SidebarItem data-name="Resume" onClick={sidebarClickHandler}><h1 data-name="Resume">Resume</h1></SidebarItem>
             <SidebarItem data-name="Contact Me" onClick={sidebarClickHandler}><h1 data-name="Contact Me">Contact Me</h1></SidebarItem>
+
             {/* <SidebarItem data-name="Achievements" onClick={sidebarClickHandler}><h1 data-name="Achievements">Achievements</h1></SidebarItem> */}
         </SidebarContainer>
     )

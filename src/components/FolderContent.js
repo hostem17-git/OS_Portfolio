@@ -8,6 +8,7 @@ import Skills from "./AboutMe/Skills"
 import Projects from "./AboutMe/Projects"
 import Education from "./AboutMe/Education"
 import ContactMe from "./AboutMe/ContactMe"
+import Resume from './AboutMe/Resume'
 import Achievements from "./AboutMe/Achievements"
 
 function FolderContent() {
@@ -22,6 +23,8 @@ function FolderContent() {
             {folder.toLowerCase() === "projects".toLowerCase() && <Projects />}
             {folder.toLowerCase() === "education".toLowerCase() && <Education />}
             {folder.toLowerCase() === "contact me".toLowerCase() && <ContactMe />}
+            {folder.toLowerCase() === "resume".toLowerCase() && <Resume />}
+
             {folder.toLowerCase() === "achievements".toLowerCase() && <Achievements />}
 
         </ContentContainer>
