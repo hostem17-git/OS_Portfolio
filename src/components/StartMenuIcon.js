@@ -48,6 +48,7 @@ const IconContainer = styled.div`
     >h4{
         padding-top:5px;
         font-weight: 400;
+        text-align: center;
     }
 
     >.taskbar{

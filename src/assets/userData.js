@@ -4,8 +4,10 @@ import IBM from "./images/ibm.png"
 import Kyndryl from "./images/kyndryl.png";
 import hackerRank from "./images/HackerRank.png"
 import Codechef from "./images/codechef.png"
-import linkedIn from "./images/linkedIn.png"
+import linkedIn from "./images/project/linkedIn.png"
 import git from "./images/git.png"
+import slack from "./images/project/slack.png";
+import gmail from "./images/project/gmail.png"
 
 
 const user = {
@@ -49,6 +51,7 @@ const user = {
     ],
 
     email: "vjjais17@gmail.com",
+    phone: "+91-9454559034",
 
     // **********************************************
     aboutMe: {
@@ -137,22 +140,25 @@ const user = {
     projects: [
 
         {
-            name: "LinkedIn-Clone",
+            name: "LinkedIn Clone",
             techstack: ["React", "Redux", "firebase", "firestore", "Material-UI"],
             description: "LinkedIn clone that allows users to login via mail and password.Once logged-in, users have option to see previous posts/ add their own posts",
             projectUrl: "https://linkedin-66877.web.app/",
+            img: linkedIn,
         },
         {
-            name: "Slack-Clone",
+            name: "Slack Clone",
             techstack: ["React", "Redux", "React-Router", "firebase", "firestore", "Google Authentication", "Material-UI"],
             description: "Slack Clone made using React.js. Users login using Google authentication and once logged-in, users have option to create new channels, post on existing channels",
             projectUrl: "https://slack-clone-562d1.web.app/",
+            img: slack,
         },
         {
             name: "Gmail Clone",
             techstack: ["React", "Redux", "firebase", "firestore", "Material-UI"],
             description: "LinkedIn clone that allows users to login via mail and password.Once logged-in, users have option to see previous posts/ add their own posts",
             projectUrl: "https://fir-69a7c.firebaseapp.com/",
+            img: gmail,
         }
 
     ]

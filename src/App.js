@@ -15,11 +15,7 @@ function App() {
   initializeIcons();
 
   const loggedIn = useSelector(checkloginStatus)
-  const desktopApps = {
-    "Gmail": gmail,
-    "Slack": slack,
-    "Spotify": spotify
-  };
+
   const [startMenuVisibility, setStartMenuVisibility] = useState(false);
 
   return (
@@ -27,9 +23,8 @@ function App() {
       {!loggedIn ?
         <LockScreen /> :
         <>
-          <AppMain desktopApps={desktopApps} />
-
-          {startMenuVisibility && <StartMenu desktopApps={desktopApps} onClickHandler={setStartMenuVisibility} />}
+          <AppMain />
+          {startMenuVisibility && <StartMenu onClickHandler={setStartMenuVisibility} />}
           <AppFooter setStartMenuVisibility={setStartMenuVisibility} />
         </>
 

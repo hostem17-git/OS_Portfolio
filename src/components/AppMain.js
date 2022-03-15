@@ -6,6 +6,7 @@ import { windows11_dark } from "./assets.js"
 import DesktopIcon from './DesktopIcon'
 import Folder from './Folder.js'
 import { file_explorer } from './assets.js'
+import user from '../assets/userData.js'
 
 function AppMain({ desktopApps }) {
     const aboutMeVisibility = useSelector(getAboutMeVisibility);
@@ -30,11 +31,15 @@ function AppMain({ desktopApps }) {
             {aboutMeVisibility ? <Folder /> : <></>}
             <DesktopIconListContainer>
                 <DesktopIcon onClickhandler={openAboutMe} image imageIcon={file_explorer} title="About Me" />
+
                 {
-                    Object.keys(desktopApps).map((index) => {
-                        return <DesktopIcon key={index} image imageIcon={desktopApps[index]} title={index} />
-                    })
+                    user.projects.map((project, projIndex) => (
+                        <a href={project.projectUrl} target="_blank" rel="noreferrer">
+                            <DesktopIcon key={projIndex} image imageIcon={project.img} title={project.name} />
+                        </a>
+                    ))
                 }
+
             </DesktopIconListContainer>
 
         </AppMainContainer >
@@ -55,5 +60,9 @@ const DesktopIconListContainer = styled.div`
     flex-direction:column;
     align-items:flex-start;
     width:fit-content;
+
+    >a{
+        text-decoration: none;
+    }
     /* border:1px solid pink; */
 `;

@@ -9,6 +9,11 @@ import { Avatar } from '@mui/material';
 import { githubLogo, linkedIn, mail } from "./assets"
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
 import { avatar } from "./assets"
+import user from '../assets/userData';
+import EmailIcon from '@mui/icons-material/Email';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+
+
 
 
 function StartMenu({ desktopApps, onClickHandler }) {
@@ -24,9 +29,28 @@ function StartMenu({ desktopApps, onClickHandler }) {
                 <HelloBox>
                     <Avatar src={avatar} alt='<a href="https://www.freepik.com/vectors/people">People vector created by freepik - www.freepik.com</a>' sx={{ padding: "5px", width: 48, height: 48 }} />
                     <h4>Hello {`${name}`} ! Let's Connect</h4>
+                    <PersonalInfo>
+                        <Item>
+                            <EmailIcon sx={{ width: 18, height: 18 }} />
+                            <h4>{user.email}</h4>
+
+                        </Item>
+
+                        <Item>
+                            <LocalPhoneIcon sx={{ width: 14, height: 14 }} />
+                            <h4>{user.phone}</h4>
+                        </Item>
+
+                    </PersonalInfo>
+
                     <ConnectIconContainer>
-                        <a href="https://github.com/hostem17-git" target="_blank" rel="noreferrer"> <img src={githubLogo} alt="Github Logo" /> </a>
-                        <a href="https://www.linkedin.com/in/vinayak-jaiswal/" rel="noreferrer" target="_blank"> <img src={linkedIn} alt="LinkedIn Logo" /></a>
+                        {
+                            user.profiles.map((profile, index) => (
+                                <a key={index} href={profile.value} target="_blank" rel="noreferrer">
+                                    <img src={profile.picture} alt={profile.name} />
+                                </a>
+                            ))
+                        }
                         <img src={mail} alt="Mail" />
                     </ConnectIconContainer>
 
@@ -37,16 +61,22 @@ function StartMenu({ desktopApps, onClickHandler }) {
                     <input type="text" placeholder='Type here to search' />
                 </StartMenuSearch>
 
+
                 <StartMenuApps>
                     <StartMenuAppsContainer>
                         {
-                            Object.keys(desktopApps).map((index) => {
-                                return <StartMenuIcon image imageIcon={desktopApps[index]} title={index} />
-                            })
+                            user.projects.map((project, projIndex) => (
+                                <a href={project.projectUrl} target="_blank" rel="noreferrer">
+                                    <StartMenuIcon key={projIndex} image imageIcon={project.img} title={project.name} />
+                                </a>
+                            ))
                         }
-                    </StartMenuAppsContainer>
 
+                    </StartMenuAppsContainer>
                 </StartMenuApps>
+
+
+
                 <StartMenuUserInfo>
                     <UserInfo>
                         <Avatar sx={{ width: 30, height: 30 }}>{name ? `${name[0]}`.toUpperCase() : "U"}</Avatar>
@@ -81,7 +111,9 @@ const StartMenuBox = styled.div`
     background-color: rgba(0,0,0,0.8);
     padding:20px;
     border-radius:15px;
+    max-width:40%;
     height: 500px; //TODO:MAke Dynamic
+    
 `;
 
 const StartMenuSearch = styled.div`
@@ -120,6 +152,9 @@ const StartMenuAppsContainer = styled.div`
     flex-wrap:wrap;
     margin:8px auto;
     align-items: center;
+    >a{
+        text-decoration: none;
+    }
     
 `;
 
@@ -191,3 +226,24 @@ const ConnectIconContainer = styled.div`
     }
 `;
 
+
+const PersonalInfo = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    color:white;
+`;
+const Item = styled.div`
+    display:flex;
+    align-items: center;
+    >h4{
+        font-weight:300;
+    }
+    *{
+        margin-right: 5px ;
+    }
+    >.copy{
+        cursor: pointer;
+    }
+`;
