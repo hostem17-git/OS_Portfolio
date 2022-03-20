@@ -17,11 +17,14 @@ export const folderSlice = createSlice({
         },
         hideAboutMe: (state) => {
             state.aboutMeVisibility = false;
-        }
+        },
+        ToggleAboutMe: (state) => {
+            state.aboutMeVisibility = !state.aboutMeVisibility;
+        },
     },
 });
 
-export const { setFolder, showAboutMe, hideAboutMe } = folderSlice.actions;
+export const { setFolder, showAboutMe, hideAboutMe, ToggleAboutMe } = folderSlice.actions;
 
 export const getFolder = (state) => { return state.folder.name };
 export const getAboutMeVisibility = (state) => { return state.folder.aboutMeVisibility }

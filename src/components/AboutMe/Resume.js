@@ -22,6 +22,7 @@ const ResumeContainer = styled.div`
     width:100%;
     display:flex;
     justify-content: center;
+    /* border:2px solid white;/ */
 `;
 
 const ButtonContainer = styled.div`

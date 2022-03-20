@@ -102,6 +102,7 @@ const StartMenuContainer = styled.div`
     height:100%;
     justify-content:center;
     align-items:center;
+    overflow:hidden;
    
 `;
 
@@ -115,6 +116,9 @@ const StartMenuBox = styled.div`
     flex-direction: column;
     justify-content:space-between;
     height: 500px; //TODO:MAke Dynamic
+    @media (max-width :400px) {
+        max-width:60%;
+    }
     
 `;
 
@@ -145,15 +149,17 @@ const StartMenuApps = styled.div`
     display:flex;
     align-items:flex-start;
     max-height:35%;
+    max-width: 100%;
     overflow-y: auto;
+    flex-wrap: wrap;
 `
 
 const StartMenuAppsContainer = styled.div`
-    /* border:1px solid pink; */
     display:flex;
     flex-wrap:wrap;
     margin:8px auto;
     align-items: center;
+    justify-content: center;
     >a{
         text-decoration: none;
     }
@@ -165,7 +171,6 @@ const StartMenuUserInfo = styled.div`
     justify-self: flex-end;
     align-items:center;
     justify-content:space-between;
-    /* background-color: rgba(0,0,0,0.9); */
     margin-top:15px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -178,8 +183,6 @@ const StartMenuUserInfo = styled.div`
     >.MuiSvgIcon-root{
         cursor:pointer;
         border-radius:100%;
-        /* background-color: green; */
-
         :hover{
             box-shadow: 0 0 10px #fff;
         }
@@ -214,8 +217,13 @@ const HelloBox = styled.div`
 
 const ConnectIconContainer = styled.div`
     display:flex;
+    /* flex-wrap: wrap ; */
+    max-width: 100%;
+    overflow-x: scroll;
     align-items:center;
-    justify-content:center;
+    justify-content:space-around;
+    padding-right: 20px;
+
     >a>img,img{
         object-fit: contain;
         width:40px;
@@ -229,7 +237,6 @@ const ConnectIconContainer = styled.div`
     }
 `;
 
-
 const PersonalInfo = styled.div`
     display:flex;
     flex-direction: column;
@@ -237,6 +244,7 @@ const PersonalInfo = styled.div`
     justify-content:center;
     color:white;
 `;
+
 const Item = styled.div`
     display:flex;
     align-items: center;
