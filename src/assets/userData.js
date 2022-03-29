@@ -76,7 +76,7 @@ const user = {
                     startDate: "Nov 2021",
                     isCurrent: true,
                     endDate: null,
-                    description: "AAAA AAAAAA AAA AAAA AAA AAA AAAAA AA AAAA A AAAA",
+                    description: " ",
                 }
             ]
         },
@@ -93,7 +93,7 @@ const user = {
                     startDate: "Sep 2020",
                     isCurrent: false,
                     endDate: "Nov 2021",
-                    description: "B BBB BB BBBB BBB BBBB BBBB BBBBB  BB BBBBB BBBB",
+                    description: "",
                 }
             ]
         }

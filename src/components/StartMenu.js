@@ -219,10 +219,13 @@ const ConnectIconContainer = styled.div`
     display:flex;
     /* flex-wrap: wrap ; */
     max-width: 100%;
-    overflow-x: scroll;
     align-items:center;
     justify-content:space-around;
     padding-right: 20px;
+    @media (max-width:900px){
+        overflow-x: scroll;
+        /* padding-left:20px; */
+    }
 
     >a>img,img{
         object-fit: contain;
