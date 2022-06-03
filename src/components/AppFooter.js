@@ -11,12 +11,7 @@ import { getAboutMeVisibility, hideAboutMe, showAboutMe, ToggleAboutMe } from '.
 
 function AppFooter({ setStartMenuVisibility }) {
     const dispatch = useDispatch();
-    const current = useSelector(getAboutMeVisibility);
-
-    const show = () => {
-        console.log("hi"); dispatch(showAboutMe());
-    }
-
+  
     const openAboutMe = () => {
         dispatch(ToggleAboutMe())
     }

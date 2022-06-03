@@ -2,9 +2,20 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { setFolder } from '../features/folderSlice'
+import { motion } from 'framer-motion';
+
 
 function FolderSidebar() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const sideBarVariants = {
+        hidden: {
+            y: "-100vh",
+        },
+        visible: {
+            y: 0,
+            transition: { duration: .2 }
+        }
+    }
 
     const sidebarClickHandler = (e) => {
         dispatch(setFolder(
@@ -18,7 +29,7 @@ function FolderSidebar() {
 
     return (
 
-        <SidebarContainer className="preventDrag">
+        <SidebarContainer variants={sideBarVariants} initial="hidden" animate="visible" className="preventDrag">
             <SidebarItem data-name="About Me" onClick={sidebarClickHandler}><h1 data-name="About Me"> About Me</h1></SidebarItem>
             <SidebarItem data-name="Experience" onClick={sidebarClickHandler}><h1 data-name="Experience" >Experience</h1></SidebarItem>
             <SidebarItem data-name="Skills" onClick={sidebarClickHandler}><h1 data-name="Skills">Skills</h1></SidebarItem>
@@ -35,7 +46,7 @@ function FolderSidebar() {
 
 export default FolderSidebar
 
-const SidebarContainer = styled.div`
+const SidebarContainer = styled(motion.div)`
     flex:.1;    
     display:flex;
     flex-direction: column;

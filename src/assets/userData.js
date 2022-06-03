@@ -8,6 +8,9 @@ import linkedIn from "./images/project/linkedIn.png"
 import git from "./images/git.png"
 import slack from "./images/project/slack.png";
 import gmail from "./images/project/gmail.png"
+import bnb from "./images/project/bnb.png"
+import ethereum from "./images/project/ethereum.png"
+
 
 
 const user = {
@@ -119,12 +122,8 @@ const user = {
     ],
     skills: [
         {
-            name: "Language Proficiency",
-            values: [
-                "C++",
-                "Python",
-                "Java",
-            ],
+            name: "BlockChain | Smart Contracts",
+            values: ["DeFi", "DAO", "Solidity", "Hardhat", "Chai", "Ethereum", "Binance Smart Chain", "IPFS", "ERC20", "ERC721", "ERC1155"]
         },
         {
             name: "Web Development",
@@ -133,18 +132,35 @@ const user = {
                 "Bootstrap", "HTML", "CSS", "Javascript", "MySQL"]
         },
         {
+            name: "Language Proficiency",
+            values: [
+                "C++",
+                "Python",
+                "Java",
+            ],
+        },
+        {
             name: "Miscellaneous ",
             values: ["Data Structures", "Algorithms", "Operating Systems"],
         },
     ],
     projects: [
+        {
+            name: "BEP20 Vesting Contract",
+            techstack: ["Solidity", "Hardhat", "Chai", "OpenZepplin", "Binance Smart Chain", "Pancake Swap"],
+            description: "BEP20 vesting contract for Binance smart chain. Tokens bought from a listed Launchpad will automatically be frozen for pre-defined vesting period.Owner has the option to send free or frozen tokens.",
+            img: bnb,
+            projectUrl: "https://testnet.bscscan.com/address/0xDd6eA97A68361389f3EcC255b501Cb3d2fB2D388",
+            git: "https://github.com/hostem17-git/vesting"
 
+        },
         {
             name: "LinkedIn Clone",
             techstack: ["React", "Redux", "firebase", "firestore", "Material-UI"],
             description: "LinkedIn clone that allows users to login via mail and password.Once logged-in, users have option to see previous posts/ add their own posts",
             projectUrl: "https://linkedin-66877.web.app/",
             img: linkedIn,
+            git: "https://github.com/hostem17-git/LinkedIN"
         },
         {
             name: "Slack Clone",
@@ -152,6 +168,7 @@ const user = {
             description: "Slack Clone made using React.js. Users login using Google authentication and once logged-in, users have option to create new channels, post on existing channels",
             projectUrl: "https://slack-clone-562d1.web.app/",
             img: slack,
+            git: "https://github.com/hostem17-git/slack"
         },
         {
             name: "Gmail Clone",
@@ -159,6 +176,7 @@ const user = {
             description: "LinkedIn clone that allows users to login via mail and password.Once logged-in, users have option to see previous posts/ add their own posts",
             projectUrl: "https://fir-69a7c.firebaseapp.com/",
             img: gmail,
+            git: "https://github.com/hostem17-git/gmail"
         }
 
     ]

@@ -28,10 +28,6 @@ function App() {
         </>
 
       }
-      {/* <AppMain desktopApps={desktopApps} />
-      <StartMenu desktopApps={desktopApps} />
-      <AppFooter /> */}
-
     </AppBody>
   );
 }

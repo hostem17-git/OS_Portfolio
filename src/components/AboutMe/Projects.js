@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import LinkIcon from '@mui/icons-material/Link';
 import userData from "../../assets/userData"
 import Circle from '@mui/icons-material/Circle'
-
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 function Projects() {
     return (
@@ -14,16 +14,17 @@ function Projects() {
                     return <Project key={projectIndex}>
                         <ProjectHeader>
                             <h1>
-                                {project.name}
+                                {project?.name}
                             </h1>
-                            <a href={project.projectUrl}><LinkIcon sx={{ color: "white" }} /></a>
+                            <a href={project?.projectUrl}><LinkIcon sx={{ color: "white" }} /></a>
+                            <a href={project?.git}> <GitHubIcon sx={{ color: "white" }} /> </a>
                         </ProjectHeader>
                         <ProjectDescription>
-                            <p>{project.description}</p>
+                            <p>{project?.description}</p>
                         </ProjectDescription>
                         <TechStack>
                             <h4>TechStack :</h4>{
-                                project.techstack.map((item, index) => (
+                                project?.techstack.map((item, index) => (
                                     <span><Circle sx={{ width: 8, height: 8 }} /> <h4>{item}</h4></span>
                                 )
 
@@ -56,6 +57,9 @@ const ProjectHeader = styled.div`
         font-size: 24px;
         font-weight: 400;
         margin-right:10px ;
+    }
+    >a{
+        margin-right: 5px;
     }
 `;
 

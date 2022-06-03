@@ -10,6 +10,8 @@ import { Icon } from '@fluentui/react/lib/Icon';
 import { NeutralColors } from '@fluentui/theme';
 import { file_explorer_small } from "./assets"
 import Draggable from 'react-draggable';
+import { motion } from 'framer-motion';
+
 
 function Folder() {
 
@@ -24,6 +26,7 @@ function Folder() {
     const folder = useSelector(getFolder);
 
     const folderBox = useRef();
+
     const folderSize = {
         minimized: false,
         min: {
@@ -41,9 +44,16 @@ function Folder() {
         folderSize.minimized = !folderSize.minimized;
         folderBox.current.style.width = targetDimensions.width;
         folderBox.current.style.height = targetDimensions.height;
-
     }
-
+    const variants = {
+        hidden: {
+            x: "-100vw"
+        },
+        visible: {
+            x: 0,
+            transition: { duration: 5 }
+        }
+    }
     return (
         <Draggable cancel=".preventDrag">
             {/* ADD THIS class to any child from where you don't want drag to initiate  */}
@@ -61,7 +71,7 @@ function Folder() {
                     </FolderControl>
 
                 </FolderHeader>
-                <FolderNavigation onDragStart={() => { return false; }}>
+                <FolderNavigation variants={variants} hidden="hidden" animate="visible" onDragStart={() => { return false; }}>
                     <NavigationControl>
                         <IconButton>
                             <ArrowBack />
@@ -104,6 +114,9 @@ const FolderContainer = styled.div`
     position:absolute;
     z-index:100;
     overflow:hidden;
+    transition:width .1s linear;
+    transition:height .1s linear;
+
 `;
 
 const FolderHeader = styled.div`
@@ -117,7 +130,7 @@ const FolderHeader = styled.div`
     ;
 `;
 
-const FolderControl = styled.div`
+const FolderControl = styled(motion.div)`
     >.controlButton{
         padding:5px 10px;
         cursor: pointer;
@@ -148,7 +161,7 @@ const FolderName = styled.div`
 `;
 
 
-const FolderNavigation = styled.div`
+const FolderNavigation = styled(motion.div)`
     display:flex;
     align-items:center;
     box-sizing: border-box;

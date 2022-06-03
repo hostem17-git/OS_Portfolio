@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const folderSlice = createSlice({
     name: 'folder',
     initialState: {
-        aboutMeVisibility: false,
+        aboutMeVisibility: true,
         name: "About Me",
     },
 
