@@ -29,30 +29,9 @@ function AppMain({ desktopApps }) {
         >
 
             {aboutMeVisibility ? <Folder /> : <></>}
-            <DesktopIconListContainer>
+            <DesktopIconListContainer >
                 <DesktopIcon onClickhandler={openAboutMe} image imageIcon={file_explorer} title="About Me" />
 
-                {
-                    user.projects.map((project, projIndex) => (
-                        <a href={project.projectUrl} target="_blank" rel="noreferrer">
-                            <DesktopIcon key={projIndex} image imageIcon={project.img} title={project.name} />
-                        </a>
-                    ))
-                }
-                {/* {
-                    user.projects.map((project, projIndex) => (
-                        <a href={project.projectUrl} target="_blank" rel="noreferrer">
-                            <DesktopIcon key={projIndex} image imageIcon={project.img} title={project.name} />
-                        </a>
-                    ))
-                }
-                {
-                    user.projects.map((project, projIndex) => (
-                        <a href={project.projectUrl} target="_blank" rel="noreferrer">
-                            <DesktopIcon key={projIndex} image imageIcon={project.img} title={project.name} />
-                        </a>
-                    ))
-                }
 
                 {
                     user.projects.map((project, projIndex) => (
@@ -61,13 +40,8 @@ function AppMain({ desktopApps }) {
                         </a>
                     ))
                 }
-                {
-                    user.projects.map((project, projIndex) => (
-                        <a href={project.projectUrl} target="_blank" rel="noreferrer">
-                            <DesktopIcon key={projIndex} image imageIcon={project.img} title={project.name} />
-                        </a>
-                    ))
-                } */}
+
+
 
             </DesktopIconListContainer>
 
@@ -87,15 +61,11 @@ const AppMainContainer = styled.div`
 const DesktopIconListContainer = styled.div`
     display:flex;
     flex-direction:column;
-    /* align-items:flex-start;
-    justify-content:flex-start; */
     flex-wrap: wrap;
     width:fit-content;
-    border:1px solid green;
-    width:100vw;
-    height: 100vh;
+    max-width:100vw;
+    max-height: 90vh;
     >a{
         text-decoration: none;
     }
-    /* border:1px solid pink; */
 `;

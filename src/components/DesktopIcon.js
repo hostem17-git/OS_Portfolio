@@ -4,8 +4,8 @@ import styled from 'styled-components'
 function DesktopIcon({ Icon, title, taskbar, image, imageIcon, onClickhandler }) {
     return (
 
-        <WidthSeparator onClick={() => { onClickhandler && onClickhandler(true) }} >
-            <IconContainer className={`${taskbar ? "taskbarContainer" : "desktopContainer"}`} >
+        <WidthSeparator className='test' onClick={() => { onClickhandler && onClickhandler(true) }} >
+            <IconContainer className={"desktopContainer"} >
                 {image ?
                     <>
                         <img className={`${taskbar ? "taskbar" : "desktop"}`} alt="icon" src={imageIcon} />
@@ -26,14 +26,11 @@ function DesktopIcon({ Icon, title, taskbar, image, imageIcon, onClickhandler })
 export default DesktopIcon
 
 const WidthSeparator = styled.div`
-    >.taskbarContainer{
-        width:40px;
-    }
+width:fit-content;
     >.desktopContainer{
         width:80px;
     }
 `;
-
 
 const IconContainer = styled.div`
     color:white;
