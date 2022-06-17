@@ -10,6 +10,8 @@ import slack from "./images/project/slack.png";
 import gmail from "./images/project/gmail.png"
 import bnb from "./images/project/bnb.png"
 import ethereum from "./images/project/ethereum.png"
+import polygon from "./images/project/polygon.png"
+
 
 
 
@@ -145,6 +147,13 @@ const user = {
         },
     ],
     projects: [
+        {
+            name:"Smart Contract Audit",
+            techstack:["Solidity", "Hardhat", "Chai", "OpenZepplin", "Binance Smart Chain"],
+            description: "Audited multi-chain smart contract that involved reward tokens, Raffle contract, Dutch Raffle Contract and Staking Contract deployed on Ethereum and Polygon",
+            img:polygon,
+            
+        },
         {
             name: "BEP20 Vesting Contract",
             techstack: ["Solidity", "Hardhat", "Chai", "OpenZepplin", "Binance Smart Chain", "Pancake Swap"],

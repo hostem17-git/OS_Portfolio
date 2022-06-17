@@ -6,12 +6,12 @@ import SystemIcon from './SystemIcon';
 import WifiIcon from '@mui/icons-material/Wifi';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import StartMenuIcon from './StartMenuIcon';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAboutMeVisibility, hideAboutMe, showAboutMe, ToggleAboutMe } from '../features/folderSlice.js';
+import { useDispatch } from 'react-redux';
+import { ToggleAboutMe } from '../features/folderSlice.js';
 
 function AppFooter({ setStartMenuVisibility }) {
     const dispatch = useDispatch();
-  
+
     const openAboutMe = () => {
         dispatch(ToggleAboutMe())
     }
