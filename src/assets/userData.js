@@ -123,10 +123,10 @@ const user = {
 
     ],
     skills: [
-        {
-            name: "BlockChain | Smart Contracts",
-            values: ["DeFi", "DAO", "Solidity", "Hardhat", "Chai", "Ethereum", "Binance Smart Chain", "IPFS", "ERC20", "ERC721", "ERC1155"]
-        },
+        // {
+        //     name: "BlockChain | Smart Contracts",
+        //     values: ["DeFi", "DAO", "Solidity", "Hardhat", "Chai", "Ethereum", "Binance Smart Chain", "IPFS", "ERC20", "ERC721", "ERC1155"]
+        // },
         {
             name: "Web Development",
             values: [
@@ -147,22 +147,22 @@ const user = {
         },
     ],
     projects: [
-        {
-            name:"Smart Contract Audit",
-            techstack:["Solidity", "Hardhat", "Chai", "OpenZepplin", "Binance Smart Chain"],
-            description: "Audited multi-chain smart contract that involved reward tokens, Raffle contract, Dutch Raffle Contract and Staking Contract deployed on Ethereum and Polygon",
-            img:polygon,
+        // {
+        //     name:"Smart Contract Audit",
+        //     techstack:["Solidity", "Hardhat", "Chai", "OpenZepplin", "Binance Smart Chain"],
+        //     description: "Audited multi-chain smart contract that involved reward tokens, Raffle contract, Dutch Raffle Contract and Staking Contract deployed on Ethereum and Polygon",
+        //     img:polygon,
             
-        },
-        {
-            name: "BEP20 Vesting Contract",
-            techstack: ["Solidity", "Hardhat", "Chai", "OpenZepplin", "Binance Smart Chain", "Pancake Swap"],
-            description: "BEP20 vesting contract for Binance smart chain. Tokens bought from a listed Launchpad will automatically be frozen for pre-defined vesting period.Owner has the option to send free or frozen tokens.",
-            img: bnb,
-            projectUrl: "https://testnet.bscscan.com/address/0xDd6eA97A68361389f3EcC255b501Cb3d2fB2D388",
-            git: "https://github.com/hostem17-git/vesting"
+        // },
+        // {
+        //     name: "BEP20 Vesting Contract",
+        //     techstack: ["Solidity", "Hardhat", "Chai", "OpenZepplin", "Binance Smart Chain", "Pancake Swap"],
+        //     description: "BEP20 vesting contract for Binance smart chain. Tokens bought from a listed Launchpad will automatically be frozen for pre-defined vesting period.Owner has the option to send free or frozen tokens.",
+        //     img: bnb,
+        //     projectUrl: "https://testnet.bscscan.com/address/0xDd6eA97A68361389f3EcC255b501Cb3d2fB2D388",
+        //     git: "https://github.com/hostem17-git/vesting"
 
-        },
+        // },
         {
             name: "LinkedIn Clone",
             techstack: ["React", "Redux", "firebase", "firestore", "Material-UI"],
